@@ -1,0 +1,7 @@
+package com.example.a20190305.models;
+
+public enum CurrencyCodes {
+
+    BNG,NZD,ILS,RUB,CAD,USD,PHP,CHF,AUD,JPY,TRY,HKD,MYR,HRK,CZK,IDR,DKK,NOK,HUF,GBP,MXN,THB,ISK,ZAR,BRL,SGD,PLN,INR,KRW,RON,CNY,SEK,EUR
+
+}
