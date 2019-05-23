@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_currency"
+            android:layout_width="113dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@string/currency" />
+
+        <EditText
+            android:id="@+id/et_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@string/amount" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/refresh_buttton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="12dp"
+        android:text="@string/send" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/currency_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

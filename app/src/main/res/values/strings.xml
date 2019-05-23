@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">20190305</string>
+    <string name="one_week">1W</string>
+    <string name="one_month">1M</string>
+    <string name="three_month">3M</string>
+    <string name="six_month">6M</string>
+    <string name="one_year">1Y</string>
+    <string name="appname">Currency App</string>
+    <string name="currency">Currency</string>
+    <string name="amount">Amount</string>
+    <string name="send">Send</string>
+    <string name="currencies">Currencies</string>
+    <string name="charts">Charts</string>
 </resources>

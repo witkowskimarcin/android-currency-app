@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_currency"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="Currency"
+            android:layout_gravity="center"
+            android:gravity="center"
+
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/et_currency2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="Currency"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:ems="10"
+            android:inputType="textPersonName" />
+    </LinearLayout>
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lineChart"
+                android:layout_width="match_parent"
+                android:layout_height="400dp">
+
+            </com.github.mikephil.charting.charts.LineChart>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_1w"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="button_1w_oc"
+                android:text="@string/one_week" />
+
+            <Button
+                android:id="@+id/button_1m"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="button_1m_oc"
+                android:text="@string/one_month" />
+
+            <Button
+                android:id="@+id/button_3m"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="button_3m_oc"
+                android:text="@string/three_month" />
+
+            <Button
+                android:id="@+id/button_6m"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="button_6m_oc"
+                android:text="@string/six_month" />
+
+            <Button
+                android:id="@+id/button_1y"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="button_1y_oc"
+                android:text="@string/one_year" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

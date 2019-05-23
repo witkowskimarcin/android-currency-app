@@ -10,11 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.a20190305.R;
 import com.example.a20190305.base.BaseFragment;
-import com.example.a20190305.database.AppDatabase;
 import com.example.a20190305.fragments.adapters.CurrencyAdapter;
 import com.example.a20190305.models.Currency;
 import com.example.a20190305.models.TableModel;
@@ -30,22 +30,24 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class PostFragment extends BaseFragment implements View.OnClickListener{
+public class ManyConversionsFragment extends BaseFragment implements View.OnClickListener{
 
     private RecyclerView recyclerView;
     private List<Currency> currencyList = new ArrayList<>();
     private Map<String,Currency> currencyMap = new HashMap<>();
     private CurrencyAdapter adapter;
     private Button refreshData;
+    private EditText et_currency;
+    private EditText et_amount;
 
-    public static PostFragment newInstance(){
-        return new PostFragment();
+    public static ManyConversionsFragment newInstance(){
+        return new ManyConversionsFragment();
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_post,container,false);
+        View rootView = inflater.inflate(R.layout.fragment_manyconverions,container,false);
 
         findViews(rootView);
         setListeners();
@@ -71,7 +73,26 @@ public class PostFragment extends BaseFragment implements View.OnClickListener{
 
         Log.i("log", "TUTAJ");
 
-        Rest.getRest().getTables("PLN").enqueue(new Callback<TableModel>() {
+        currencyList.clear();
+
+        String currency_str = et_currency.getText().toString();
+        if(currency_str==null || currency_str.equals("") || currency_str.equals("Currency")){
+            currency_str = "PLN";
+        }
+
+        String amount_str = et_amount.getText().toString();
+        if(amount_str==null || amount_str.equals("") || amount_str.equals("Amount")){
+            amount_str = "1.0";
+        }
+
+        Log.i("info",currency_str);
+        Log.i("info",currency_str);
+        Log.i("info",currency_str);
+        Log.i("info",currency_str);
+
+        final double amount = Double.parseDouble(amount_str);
+
+        Rest.getRest().getTables(currency_str).enqueue(new Callback<TableModel>() {
             @Override
             public void onResponse(Call<TableModel> call, Response<TableModel> response) {
                 Log.i("log", response.message());
@@ -84,7 +105,6 @@ public class PostFragment extends BaseFragment implements View.OnClickListener{
                     TableModel tableModel = response.body();
                         Log.i("log", "TUTAJ3");
 
-
                         Log.i("log", tableModel.getBase());
 
                         TableModel tm = new TableModel();
@@ -96,7 +116,7 @@ public class PostFragment extends BaseFragment implements View.OnClickListener{
 
                             Currency c = new Currency();
                             c.setCode(entry.getKey());
-                            c.setCurrency(entry.getValue());
+                            c.setCurrency(entry.getValue()*amount);
 
                             c.save();
                             currencyList.add(c);
@@ -122,6 +142,8 @@ public class PostFragment extends BaseFragment implements View.OnClickListener{
     private void findViews(View view) {
         recyclerView = view.findViewById(R.id.currency_recycler_view);
         refreshData = view.findViewById(R.id.refresh_buttton);
+        et_amount = view.findViewById(R.id.et_amount);
+        et_currency = view.findViewById(R.id.et_currency);
     }
 
     private void setListeners(){

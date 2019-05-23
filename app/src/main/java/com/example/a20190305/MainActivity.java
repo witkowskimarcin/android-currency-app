@@ -1,15 +1,18 @@
 package com.example.a20190305;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
+import android.widget.Toast;
 
-import com.example.a20190305.fragments.FragmentA;
-import com.example.a20190305.fragments.PostFragment;
+import com.example.a20190305.fragments.ChartsFragment;
+import com.example.a20190305.fragments.ManyConversionsFragment;
 import com.example.a20190305.navigation.NavigationListener;
-import com.example.a20190305.retrofit.Rest;
 
 public class MainActivity extends AppCompatActivity implements NavigationListener {
 
@@ -20,7 +23,29 @@ public class MainActivity extends AppCompatActivity implements NavigationListene
 
         //Rest.init();
 
-        changeFragment(PostFragment.newInstance(), false);
+        //changeFragment(ManyConversionsFragment.newInstance(), false);
+
+        changeFragment(ManyConversionsFragment.newInstance(), false);
+
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.action1:
+                        //Toast.makeText(MainActivity.this, "Recents", Toast.LENGTH_SHORT).show();
+                        changeFragment(ManyConversionsFragment.newInstance(), false);
+                        break;
+                    case R.id.action2:
+                        //Toast.makeText(MainActivity.this, "Favorites", Toast.LENGTH_SHORT).show();
+                        changeFragment(ChartsFragment.newInstance(), false);
+                        break;
+
+                }
+                return true;
+            }
+        });
+
     }
 
 
