@@ -2,7 +2,8 @@
     <menu xmlns:android="http://schemas.android.com/apk/res/android">
         <item
             android:id="@+id/action1"
-            android:title="@string/currencies" />
+            android:title="@string/currencies"
+            />
             <!--android:icon="@drawable/ic_search"-->
             />
         <item

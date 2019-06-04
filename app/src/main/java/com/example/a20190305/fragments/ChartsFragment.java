@@ -147,7 +147,7 @@ public class ChartsFragment extends BaseFragment implements View.OnClickListener
 
     private void fetchData(String d1, String d2) {
 
-        Toast.makeText(getContext(),"Pobieranie danych z API",Toast.LENGTH_SHORT).show();
+       //s Toast.makeText(getContext(),"Pobieranie danych z API",Toast.LENGTH_SHORT).show();
 
         Log.i("log", "TUTAJ");
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -17,24 +18,30 @@
 
         <EditText
             android:id="@+id/et_currency"
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="Currency"
             android:layout_gravity="center"
-            android:gravity="center"
-
+            android:contentDescription="Currency"
             android:ems="10"
-            android:inputType="textPersonName" />
+
+            android:gravity="center"
+            android:inputType="textPersonName"
+            android:text="@string/first_m"
+            android:textColor="@color/White"
+            tools:text="USD" />
 
         <EditText
             android:id="@+id/et_currency2"
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="Currency"
             android:layout_gravity="center"
-            android:gravity="center"
+            android:contentDescription="Currency"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:gravity="center"
+            android:inputType="textPersonName"
+            android:text="@string/second_m"
+            android:textColor="@color/White"
+            tools:text="PLN" />
     </LinearLayout>
 
         <LinearLayout
@@ -59,40 +66,50 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="@color/Red"
                 android:onClick="button_1w_oc"
-                android:text="@string/one_week" />
+                android:text="@string/one_week"
+                android:textColor="@color/White" />
 
             <Button
                 android:id="@+id/button_1m"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="@color/Red"
                 android:onClick="button_1m_oc"
-                android:text="@string/one_month" />
+                android:text="@string/one_month"
+                android:textColor="@color/White" />
 
             <Button
                 android:id="@+id/button_3m"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="@color/Red"
                 android:onClick="button_3m_oc"
-                android:text="@string/three_month" />
+                android:text="@string/three_month"
+                android:textColor="@color/White" />
 
             <Button
                 android:id="@+id/button_6m"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="@color/Red"
                 android:onClick="button_6m_oc"
-                android:text="@string/six_month" />
+                android:text="@string/six_month"
+                android:textColor="@color/White" />
 
             <Button
                 android:id="@+id/button_1y"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="@color/Red"
                 android:onClick="button_1y_oc"
-                android:text="@string/one_year" />
+                android:text="@string/one_year"
+                android:textColor="@color/White" />
         </LinearLayout>
 
 

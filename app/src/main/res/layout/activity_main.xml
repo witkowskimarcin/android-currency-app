@@ -5,12 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/Orange">
 
     <FrameLayout
         android:id="@+id/root"
         android:layout_width="match_parent"
-        android:layout_height="500dp"></FrameLayout>
+        android:layout_height="500dp"
+        android:background="@color/Orange" ></FrameLayout>
 
     <!--<com.google.android.material.bottomnavigation.BottomNavigationView-->
         <!--android:id="@+id/bottom_navigation2"-->
@@ -40,6 +42,8 @@
         android:layout_height="56dp"
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
-        app:menu="@menu/my_navigation_items" />
+        app:menu="@menu/my_navigation_items"
+        android:background="@color/Orange"
+        app:itemTextColor="@color/White"/>
 
 </LinearLayout>

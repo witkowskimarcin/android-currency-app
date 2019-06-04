@@ -69,7 +69,7 @@ public class ManyConversionsFragment extends BaseFragment implements View.OnClic
 
     private void fetchData() {
 
-        Toast.makeText(getContext(),"Pobieranie danych z API",Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getContext(),"Pobieranie danych z API",Toast.LENGTH_SHORT).show();
 
         Log.i("log", "TUTAJ");
 

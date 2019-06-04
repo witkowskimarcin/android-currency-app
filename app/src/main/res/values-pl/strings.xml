@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="first_m">USD</string>
+    <string name="second_m">PLN</string>
     <string name="one_month">1M</string>
     <string name="one_week">1T</string>
     <string name="one_year">1R</string>
